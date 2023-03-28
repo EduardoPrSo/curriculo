@@ -1,4 +1,3 @@
-import styled from "styled-components"
 import Layout from "./components/Layout"
 import { useState, useEffect } from "react"
 
@@ -9,18 +8,18 @@ export default function Home() {
         setWindowWidth(window.innerWidth)
     }, [])
 
+    const mainContainer = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        width: '100vw',
+        backgroundColor: '#a5a5a5'
+    }
+
     return (
-        <MainPage>
+        <div style={mainContainer}>
             {windowWidth < 1024 ? <h1 style={{textAlign: 'center'}}>Visualize em um Computador</h1> : <Layout />}
-        </MainPage>
+        </div>
     )
 }
-
-const MainPage = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: #a5a5a5;
-`

@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import Degree from "./Degree";
 import Experiences from "./Experiences";
+import { profileConfig } from "../../config/config";
 
 export default function MainContent() {
+
+    const profile = profileConfig.profile;
+
     return (
         <MainContentContainer>
-            <FullName><Name>Eduardo</Name> Prudente Soupinski</FullName>
+            <FullName><Name>{profile.name}</Name> {profile.secondName}</FullName>
             <ContentInfo>
                 <Degree />
                 <Experiences />
@@ -28,7 +32,7 @@ const MainContentContainer = styled.div`
 const Name = styled.span`
     font-size: 2.5rem;
     font-weight: 600;
-    color: #00b7ff;
+    color: ${profileConfig.mainColor};
 `
 
 const FullName = styled.h1`

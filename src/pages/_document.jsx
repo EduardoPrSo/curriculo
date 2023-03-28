@@ -1,11 +1,12 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { profileConfig } from '@/config/config'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="pt-br">
       <Head>
-        <title>Eduardo Soupinski</title>
-        <link rel="icon" href="https://avatars.githubusercontent.com/u/85527054?v=4" />
+        <title>{`${profileConfig.profile.name} ${profileConfig.profile.secondName}`}</title>
+        <link rel="icon" href={profileConfig.profile.image} />
       </Head>
       <body>
         <Main />

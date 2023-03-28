@@ -2,11 +2,15 @@ import styled from "styled-components"
 import Profile from "./Profile"
 import Languages from "./Languages"
 import Habilities from "./Habilities"
+import { profileConfig } from "../../config/config";
 
 export default function SideBar() {
+
+    const profile = profileConfig.profile;
+
     return (
         <SideContent>
-            <PersonalImage src="https://avatars.githubusercontent.com/u/85527054?v=4" />
+            <PersonalImage src={profile.image} />
             <ProfileInformations>
                 <Profile />
                 <Languages />
@@ -32,7 +36,7 @@ const SideContent = styled.div`
     padding: 30px 0;
     height: 100%;
     width: 25%;
-    background-color: #00b7ff;
+    background-color: ${profileConfig.mainColor};
     border-radius: 5px 0 0 5px;
 `
 

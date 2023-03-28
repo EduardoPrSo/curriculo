@@ -1,21 +1,19 @@
 import styled from "styled-components";
+import { profileConfig } from "../../config/config";
 
 export default function Profile() {
+
+    const profile = profileConfig.profile.contact;
+
     return (
         <>
             <InfoTitle>• Contato</InfoTitle>
-            <TopicItemWithIcon>
-                <TopicIcon src="phone.svg"/>
-                <TopicItem>(41) 9 9882-6978</TopicItem>
-            </TopicItemWithIcon>
-            <TopicItemWithIcon>
-                <TopicIcon src="email.svg"/>
-                <TopicItem>edup.s@hotmail.com</TopicItem>
-            </TopicItemWithIcon>
-            <TopicItemWithIcon>
-                <TopicIcon src="linkedin.svg"/>
-                <TopicItemLink onClick={() => window.open('https://www.linkedin.com/in/DuDuPrSo')}>linkedin.com/in/DuDuPrSo</TopicItemLink>
-            </TopicItemWithIcon>
+            {profile.map((profile, index) => (
+                <TopicItemWithIcon key={index}>
+                    <TopicIcon src={profile.icon}/>
+                    {profile.link ? <TopicItemLink onClick={() => window.open(`${profile.link}`)}>{profile.title}</TopicItemLink> : <TopicItem>{profile.title}</TopicItem>}
+                </TopicItemWithIcon>
+            ))}
         </>
     )
 }

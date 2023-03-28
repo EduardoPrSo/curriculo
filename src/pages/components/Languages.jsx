@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import ExperienceLevel from "./ExperienceLevel";
+import { profileConfig } from "../../config/config";
 
 export default function Languages() {
+
+    const languages = profileConfig.languages;
+
     return (
         <>
             <InfoTitle>• Idiomas</InfoTitle>
-            <LanguageItem>
-                <TopicItemSolo>Inglês</TopicItemSolo>
-                <ExperienceLevel level={4} />
-            </LanguageItem>
+            {languages.map((language, index) => (
+                <LanguageItem key={index}>
+                    <TopicItemSolo>{language.title}</TopicItemSolo>
+                    <ExperienceLevel level={language.level} />
+                </LanguageItem>
+            ))}
         </>
     )
 }

@@ -1,33 +1,22 @@
 import styled from "styled-components";
+import { profileConfig } from "../../config/config";
 
 export default function Experiences() {
+
+    const experiences = profileConfig.experiences;
+
     return (
         <>
             <InfoTitle>• Experiênias</InfoTitle>
-            <ExperienceContainer>
-                <ExperienceTitle>- Estagiário - Volkswagen do Brasil</ExperienceTitle>
-                <ExperiencePeriod>Período: 10/06/2022 – Atualmente</ExperiencePeriod>
-                <TopicItem>- Área de qualidade de processos;</TopicItem>
-                <TopicItem>- Implementação de software de inspeção de ponstos de união;</TopicItem>
-                <TopicItem>- Desenvolvimento de idéias para os processos internos da fábrica;</TopicItem>
-                <TopicItem>- Auxílio no desenvolvimento de qualidade da área de armação.</TopicItem>
-            </ExperienceContainer>
-            <ExperienceContainer>
-                <ExperienceTitle>- Desenvolvedor Backend - Inverso</ExperienceTitle>
-                <ExperiencePeriod>Período: 18/03/2021 – 27/05/2021</ExperiencePeriod>
-                <TopicItem>- Criação de scripts para metaverso;</TopicItem>
-                <TopicItem>- Desenvolvimento de ideias em equipe;</TopicItem>
-                <TopicItem>- Manutenção de software backend.</TopicItem>
-            </ExperienceContainer>
-            <ExperienceContainer>
-                <ExperienceTitle>- Estagiário - HB Automotive S.A</ExperienceTitle>
-                <ExperiencePeriod>Período: 24/05/2021 – 03/11/2021</ExperiencePeriod>
-                <TopicItem>- Automação industrial;</TopicItem>
-                <TopicItem>- Programação de CLPs;</TopicItem>
-                <TopicItem>- Acompanhamento e manutenção na máquina Kunkel Wagner;</TopicItem>
-                <TopicItem>- Acompanhamento de termografia;</TopicItem>
-                <TopicItem>- Manutenção de equipamentos eletrônicos e ferramentas de serviço.</TopicItem>
-            </ExperienceContainer>
+            {experiences.map((experience, index) => (
+                <ExperienceContainer key={index}>
+                    <ExperienceTitle>- {experience.title}</ExperienceTitle>
+                    <ExperiencePeriod>Período: {experience.period}</ExperiencePeriod>
+                    {experience.activities.map((topic, index) => (
+                        <TopicItem key={index}>- {topic}</TopicItem>
+                    ))}
+                </ExperienceContainer>
+            ))}
         </>
     ) 
 }

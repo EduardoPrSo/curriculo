@@ -1,47 +1,21 @@
 import styled from "styled-components";
 import ExperienceLevel from "./ExperienceLevel";
+import { profileConfig } from "../../config/config";
 
 export default function Habilities() {
+    
+    const habilities = profileConfig.habilities;
+
     return (
         <>
             <InfoTitle>• Habilidades</InfoTitle>
             <HabilitieContainer>
-                <HabilitieItem>
-                    <TopicItemSolo>Office</TopicItemSolo>
-                    <ExperienceLevel level={2} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>Python</TopicItemSolo>
-                    <ExperienceLevel level={3} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>JavaScript</TopicItemSolo>
-                    <ExperienceLevel level={4} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>HTML</TopicItemSolo>
-                    <ExperienceLevel level={4} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>CSS</TopicItemSolo>
-                    <ExperienceLevel level={3} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>C/C++</TopicItemSolo>
-                    <ExperienceLevel level={1} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>NodeJS</TopicItemSolo>
-                    <ExperienceLevel level={2} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>React</TopicItemSolo>
-                    <ExperienceLevel level={3} />
-                </HabilitieItem>
-                <HabilitieItem>
-                    <TopicItemSolo>NextJS</TopicItemSolo>
-                    <ExperienceLevel level={3} />
-                </HabilitieItem>
+                {habilities.map((hability, index) => (
+                    <HabilitieItem key={index}>
+                        <TopicItemSolo>{hability.title}</TopicItemSolo>
+                        <ExperienceLevel level={hability.level} />
+                    </HabilitieItem>
+                ))}
             </HabilitieContainer>
         </> 
     )

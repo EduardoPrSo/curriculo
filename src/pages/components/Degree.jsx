@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import { profileConfig } from "../../config/config";
 
 export default function Degree() {
+
+    const degree = profileConfig.degrees;
+
     return (
         <>
             <InfoTitle>• Formação</InfoTitle>
-            <TopicItem>- Cursando Graduação em Engenharia Elétrica 6º Ano Universidade Positivo;</TopicItem>
-            <TopicItem>- Curso de programação com foco em front-end na Alura;</TopicItem>
-            <TopicItem>- Curso de inglês na Influx.</TopicItem>
+            {degree.map((degree, index) => (
+                <TopicItem key={index}>- {degree}</TopicItem>
+            ))}
         </>
     ) 
 }
