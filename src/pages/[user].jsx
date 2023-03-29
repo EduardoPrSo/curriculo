@@ -1,7 +1,7 @@
 import Layout from "./components/Layout"
 import { useState, useEffect } from "react"
 
-export default function Home() {
+export default function Home({user}) {
     const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
@@ -19,7 +19,12 @@ export default function Home() {
 
     return (
         <div style={mainContainer}>
-            {windowWidth < 1024 ? <h1 style={{textAlign: 'center'}}>Visualize em um Computador</h1> : <Layout />}
+            {windowWidth < 1024 ? <h1 style={{textAlign: 'center'}}>Visualize em um Computador</h1> : <Layout userName={user}/>}
         </div>
     )
+}
+
+export const getServerSideProps = async ({query}) => {
+    const { user } = query;
+    return { props: { user } }
 }

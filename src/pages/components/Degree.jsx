@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { profileConfig } from "../../config/config";
 
-export default function Degree() {
+export default function Degree({userProfile}) {
 
-    const degree = profileConfig.degrees;
+    const degree = userProfile.degrees;
 
     return (
         <>

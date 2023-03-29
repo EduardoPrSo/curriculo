@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { profileConfig } from "../../config/config";
 
-export default function Profile() {
+export default function Profile({userProfile}) {
 
-    const profile = profileConfig.profile.contact;
+    const profile = userProfile.profile.contact;
 
     return (
         <>

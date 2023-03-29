@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { profileConfig } from "../../config/config";
 
-export default function Experiences() {
+export default function Experiences({userProfile}) {
 
-    const experiences = profileConfig.experiences;
+    const experiences = userProfile.experiences;
 
     return (
         <>

@@ -3,16 +3,17 @@ import Degree from "./Degree";
 import Experiences from "./Experiences";
 import { profileConfig } from "../../config/config";
 
-export default function MainContent() {
+export default function MainContent({userName}) {
 
-    const profile = profileConfig.profile;
+    const profile = profileConfig[userName];
+    const user = profile.profile;
 
     return (
         <MainContentContainer>
-            <FullName><Name>{profile.name}</Name> {profile.secondName}</FullName>
+            <FullName><Name profile={profile}>{user.name}</Name> {user.secondName}</FullName>
             <ContentInfo>
-                <Degree />
-                <Experiences />
+                <Degree userProfile={profile} />
+                <Experiences userProfile={profile} />
             </ContentInfo>
         </MainContentContainer>  
     );
@@ -32,7 +33,7 @@ const MainContentContainer = styled.div`
 const Name = styled.span`
     font-size: 2.5rem;
     font-weight: 600;
-    color: ${profileConfig.mainColor};
+    color: ${props => props.profile.mainColor};
 `
 
 const FullName = styled.h1`

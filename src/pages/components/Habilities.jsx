@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import ExperienceLevel from "./ExperienceLevel";
-import { profileConfig } from "../../config/config";
 
-export default function Habilities() {
+export default function Habilities({userProfile}) {
     
-    const habilities = profileConfig.habilities;
+    const habilities = userProfile.habilities;
 
     return (
         <>

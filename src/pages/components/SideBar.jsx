@@ -4,17 +4,18 @@ import Languages from "./Languages"
 import Habilities from "./Habilities"
 import { profileConfig } from "../../config/config";
 
-export default function SideBar() {
-
-    const profile = profileConfig.profile;
+export default function SideBar({userName}) {
+    
+    const profile = profileConfig[userName];
+    const user = profile.profile;
 
     return (
-        <SideContent>
-            <PersonalImage src={profile.image} />
+        <SideContent profile={profile}>
+            <PersonalImage src={user.image} />
             <ProfileInformations>
-                <Profile />
-                <Languages />
-                <Habilities />
+                <Profile userProfile={profile} />
+                <Languages userProfile={profile} />
+                <Habilities userProfile={profile} />
             </ProfileInformations>
         </SideContent>
     )
@@ -36,7 +37,7 @@ const SideContent = styled.div`
     padding: 30px 0;
     height: 100%;
     width: 25%;
-    background-color: ${profileConfig.mainColor};
+    background-color: ${props => props.profile.mainColor};
     border-radius: 5px 0 0 5px;
 `
 

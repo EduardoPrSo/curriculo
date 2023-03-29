@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import ExperienceLevel from "./ExperienceLevel";
-import { profileConfig } from "../../config/config";
 
-export default function Languages() {
+export default function Languages({userProfile}) {
 
-    const languages = profileConfig.languages;
+    const languages = userProfile.languages;
 
     return (
         <>

@@ -2,11 +2,11 @@ import styled from "styled-components"
 import SideBar from "./SideBar"
 import MainContent from "./MainContent"
 
-export default function Layout() {
+export default function Layout({userName}) {
     return (
         <MainContainer>
-            <SideBar />
-            <MainContent />
+            <SideBar userName={userName} />
+            <MainContent userName={userName} />
         </MainContainer>
     )
 }
