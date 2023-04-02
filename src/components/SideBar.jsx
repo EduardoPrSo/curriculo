@@ -39,6 +39,13 @@ const SideContent = styled.div`
     width: 230px;
     background-color: ${props => props.profile.mainColor};
     border-radius: 5px 0 0 5px;
+
+    @media (max-width: 1024px) {
+        position: absolute;
+        display: flex;
+        width: 100vw;
+        border-radius: 0;
+    }
 `
 
 const PersonalImage = styled.img`

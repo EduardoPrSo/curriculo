@@ -19,7 +19,7 @@ export default function Home({user}) {
 
     return (
         <div style={mainContainer}>
-            {windowWidth < 1024 ? <h1 style={{textAlign: 'center'}}>Visualize em um Computador</h1> : <Layout userName={user}/>}
+            <Layout userName={user}/>
         </div>
     )
 }

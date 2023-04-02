@@ -9,7 +9,7 @@ export default function MainContent({userName}) {
     const user = profile.profile;
 
     return (
-        <MainContentContainer>
+        <MainContentContainer profile={profile}>
             <FullName><Name profile={profile}>{user.name}</Name> {user.secondName}</FullName>
             <ContentInfo>
                 <Degree userProfile={profile} />
@@ -28,12 +28,24 @@ const MainContentContainer = styled.div`
     width: 75%;
     border-radius: 0 5px 5px 0;
     overflow-y: scroll;
+    background-color: #f7f7f7;
+
+    @media (max-width: 1024px) {
+        height: 100vh;
+        width: 100vw;
+        margin-bottom: 50px
+    }
 `
 
 const Name = styled.span`
     font-size: 2.5rem;
     font-weight: 600;
     color: ${props => props.profile.mainColor};
+
+    @media (max-width: 1024px) {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
 `
 
 const FullName = styled.h1`
@@ -41,6 +53,12 @@ const FullName = styled.h1`
     font-weight: 600;
     color: #00000096;
     margin-top: 60px;
+
+    @media (max-width: 1024px) {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 30px;
+    }
 `
 
 const ContentInfo = styled.div`
@@ -53,6 +71,10 @@ const ContentInfo = styled.div`
     ::-webkit-scrollbar-thumb {
         background-color: #00000057;
         border-radius: 20px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 98%;
     }
 `
 
