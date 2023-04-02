@@ -5,7 +5,7 @@ import { useState } from "react";
 import { profileConfig } from "../config/config";
 
 export default function Layout({userName}) {
-    const [userProfile, setUserProfile] = useState(false);
+    const [userProfile, setUserProfile] = useState(true);
 
     const profile = profileConfig[userName];
 
