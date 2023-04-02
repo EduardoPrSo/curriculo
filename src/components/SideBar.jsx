@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Profile from "./Profile"
 import Languages from "./Languages"
 import Habilities from "./Habilities"
-import { profileConfig } from "../../config/config";
+import { profileConfig } from "../config/config";
 
 export default function SideBar({userName}) {
     

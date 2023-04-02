@@ -20,6 +20,7 @@ const InfoTitle = styled.h1`
     margin-top: 20px;
     color: #00000096;
 `
+
 const TopicItem = styled.p`
     font-size: 1rem;
     font-weight: 600;

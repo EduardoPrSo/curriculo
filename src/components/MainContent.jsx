@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Degree from "./Degree";
 import Experiences from "./Experiences";
-import { profileConfig } from "../../config/config";
+import { profileConfig } from "../config/config";
 
 export default function MainContent({userName}) {
 
