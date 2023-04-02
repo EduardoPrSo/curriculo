@@ -36,7 +36,7 @@ const SideContent = styled.div`
     align-items: center;
     padding: 30px 0;
     height: 100%;
-    width: 25%;
+    width: 230px;
     background-color: ${props => props.profile.mainColor};
     border-radius: 5px 0 0 5px;
 `

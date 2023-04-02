@@ -48,7 +48,7 @@ const ContentInfo = styled.div`
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
-    width: 88%;
+    width: 90%;
     overflow-y: scroll;
     ::-webkit-scrollbar-thumb {
         background-color: #00000057;
