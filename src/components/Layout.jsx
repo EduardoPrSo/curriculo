@@ -1,11 +1,16 @@
 import styled from "styled-components"
 import SideBar from "./SideBar"
 import MainContent from "./MainContent"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { profileConfig } from "../config/config";
 
 export default function Layout({userName}) {
     const [userProfile, setUserProfile] = useState(true);
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        setWindowWidth(window.innerWidth)
+    }, [])
 
     const profile = profileConfig[userName];
 
@@ -22,7 +27,7 @@ export default function Layout({userName}) {
         <MainContainer profile={profile}>
             {userProfile && <SideBar userName={userName} />}
             <MainContent userName={userName} />
-            <Informations><p style={changeButton} onClick={() => setUserProfile(!userProfile)}>{userProfile ? 'IR PARA EXPERIÊNCIAS' : 'VOLTAR PARA PERFIL'}</p></Informations>
+            {windowWidth < 1024 && <Informations><p style={changeButton} onClick={() => setUserProfile(!userProfile)}>{userProfile ? 'IR PARA EXPERIÊNCIAS' : 'VOLTAR PARA PERFIL'}</p></Informations>}
         </MainContainer>
     )
 }
