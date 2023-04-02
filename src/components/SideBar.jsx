@@ -44,6 +44,7 @@ const SideContent = styled.div`
         position: absolute;
         display: flex;
         width: 100vw;
+        padding-bottom: 40px;
         border-radius: 0;
     }
 `

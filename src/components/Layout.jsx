@@ -34,7 +34,7 @@ const Informations = styled.div`
     justify-content: center;
     width: 100%;
     height: auto;
-    top: 96.3%;
+    top: 96%;
 `
 
 
