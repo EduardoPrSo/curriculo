@@ -15,13 +15,13 @@ export const Eduardo = {
     habilities: [
         {title: "Office", level: 2},
         {title: "Python", level: 3},
+        {title: "C/C++", level: 1},
         {title: "JavaScript", level: 4},
         {title: "HTML", level: 4},
-        {title: "CSS", level: 3},
-        {title: "C/C++", level: 1},
+        {title: "CSS", level: 4},
         {title: "NodeJS", level: 2},
-        {title: "React", level: 3},
-        {title: "NextJS", level: 3}
+        {title: "React", level: 4},
+        {title: "NextJS", level: 4}
     ],
 
     languages: [
